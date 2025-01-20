@@ -1,7 +1,7 @@
 import User from './user';
 import Like from './like';
 import Share from './share';
-import PostComment from './Comment';
+import PostComment from './comment';
 
 interface PostModel {
     id: number;
