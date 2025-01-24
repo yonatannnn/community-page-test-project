@@ -1,0 +1,100 @@
+// Import variables and mixins
+@use '../variables' as vars;
+@use '../mixins';
+
+// AppBar Container
+.appbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid vars.$border-color;
+  background-color: rgba(vars.$background-color, 0.95);
+  backdrop-filter: blur(10px);
+
+  &.supports-backdrop {
+    background-color: rgba(vars.$background-color, 0.6);
+  }
+}
+
+// AppBar Inner Container
+.appbar-container {
+  @include mixins.flex-center;
+  justify-content: space-between;
+  height: 3.5rem; // 14 * 0.25rem
+  padding: 0 1rem;
+}
+
+// Left Section
+.appbar-left {
+  @include mixins.flex-center;
+}
+
+.appbar-title {
+  font-size: 1.25rem; // 20px
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+// Right Section
+.appbar-right {
+  @include mixins.flex-center;
+  gap: 0.5rem;
+}
+
+// Search Input
+.appbar-input {
+  display: none;
+
+  input {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  @media (min-width: vars.$breakpoint-md) {
+    display: block;
+    width: auto;
+  }
+}
+
+@media (min-width: vars.$breakpoint-md) {
+  .appbar-input {
+    display: block;
+    width: 12.5rem; // 200px
+  }
+}
+
+@media (min-width: vars.$breakpoint-lg) {
+  .appbar-input {
+    width: 18.75rem; // 300px
+  }
+}
+
+// Button Visibility Classes
+.appbar-btn {
+  display: none;
+
+  &.md-visible {
+    @media (min-width: vars.$breakpoint-md) {
+      display: inline-flex;
+    }
+  }
+
+  &.md-hidden {
+    @media (max-width: vars.$breakpoint-md) {
+      display: block;
+    }
+  }
+}
+
+// Sheet (Side Menu)
+.appbar-sheet {
+  width: 18.75rem; // 300px
+  padding: 1rem;
+  background: vars.$background-color;
+  box-shadow: vars.$box-shadow;
+
+  @media (min-width: vars.$breakpoint-sm) {
+    width: 25rem; // 400px
+  }
+}
