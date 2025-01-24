@@ -1,0 +1,26 @@
+/* Variables */
+$primary-color: #0066ff;
+$secondary-color: #004ecc;
+$background-color: #f9fafb;
+$text-color: #111827;
+$border-color: #eaeaea;
+$light-gray: #f0f0f0;
+$box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+/* Breakpoints */
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+:export {
+    $primaryColor: $primary-color;
+    $secondaryColor: $secondary-color;
+    $backgroundColor: $background-color;
+    $textColor: $text-color;
+    $borderColor: $border-color;
+    $lightGray: $light-gray;
+    $boxShadow: $box-shadow;
+    $breakpointSm: $breakpoint-sm;
+    $breakpointMd: $breakpoint-md;
+    $breakpointLg: $breakpoint-lg;
+}
