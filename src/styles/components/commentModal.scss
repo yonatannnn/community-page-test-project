@@ -1,0 +1,69 @@
+@use '../variables' as vars;
+@use '../mixins' as mixins;
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include mixins.flex-center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease;
+  position: relative;
+  box-shadow: vars.$box-shadow;
+}
+
+/* Modal Header */
+.modal-header {
+  @include mixins.flex-center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid vars.$border-color;
+  background-color: vars.$light-gray;
+
+  h3 {
+    margin: 0;
+    @include mixins.responsive-font(1rem, 1.25rem, 1.5rem);
+  }
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: vars.$text-color;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Smooth Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
