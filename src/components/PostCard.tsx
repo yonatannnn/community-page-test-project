@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { AvatarFallback } from "@/components/ui/avatar";
+import { Card } from "../components/ui/card";
+import { AvatarFallback } from "../components/ui/avatar";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
-import { unlikePost, likePost } from "@/redux/slices/postSlice";
+import { unlikePost, likePost } from "../redux/slices/postSlice";
 import PostModel from "../models/postModel";
 import { CommentSection } from "./CommentSection";
 import { CreateComment } from "./CreateComment";

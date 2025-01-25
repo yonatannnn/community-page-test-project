@@ -1,15 +1,16 @@
 import { useState, useRef } from "react"
 import { ImagePlus, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card } from "@/components/ui/card"
+import { Button } from "../components/ui/button"
+import { Textarea } from "../components/ui/textarea"
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
+import { Card } from "../components/ui/card"
 import { useDispatch , useSelector } from "react-redux"
-import { addPost } from "@/redux/slices/postSlice"
-import PostModel from "@/models/postModel"
-import User from "@/models/user"
+import { addPost } from "../redux/slices/postSlice"
+import PostModel from "../models/postModel"
+import User from "../models/user"
 
 export function CreatePost() {
+  
   const [images, setImages] = useState<string[]>([])
   const [text, setText] = useState("")
   const fileInputRef = useRef<HTMLInputElement>(null)

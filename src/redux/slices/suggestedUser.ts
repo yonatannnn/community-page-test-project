@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import User from '../../models/user';
-import { suggestedUsers } from '@/utils/SuggestedUser';
+import { suggestedUsers } from '../../utils/SuggestedUser';
 
 const suggestedUsersSlice = createSlice({
     name: 'suggestedUsers',
