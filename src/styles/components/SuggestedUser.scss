@@ -1,0 +1,54 @@
+@use '../variables' as vars;
+@use '../mixins' as mixins;
+
+.suggested-user {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(vars.$text-color, 0.7); /* 70% transparent dark background */
+  color: vars.$background-color; /* White text */
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: vars.$box-shadow;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(vars.$text-color, 0.8); /* Slightly less transparent on hover */
+  }
+}
+
+.avatar {
+  @include mixins.flex-center;
+  background-color: vars.$text-color; /* Dark background for avatar */
+  color: vars.$background-color; /* White text for avatar */
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%; /* Circular avatar */
+  margin-right: 10px;
+}
+
+.user-info {
+  h3 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  button {
+    margin-top: 5px;
+    background-color: vars.$primary-color; /* Button color */
+    color: vars.$background-color;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: vars.$secondary-color; /* Darker blue on hover */
+    }
+  }
+}

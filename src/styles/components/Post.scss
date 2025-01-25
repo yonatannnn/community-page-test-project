@@ -1,0 +1,147 @@
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+/* General styling for the card */
+.card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: vars.$box-shadow;
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+
+  @media (max-width: vars.$breakpoint-md) {
+    padding: 1rem;
+  }
+}
+
+/* Flex container for avatar and content */
+.card-header {
+  @include mix.flex-center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Avatar styling */
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: vars.$light-gray;
+  @include mix.flex-center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: vars.$text-color;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: vars.$breakpoint-md) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Username and last seen */
+.user-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+
+  .username {
+    font-weight: bold;
+    font-size: 1rem;
+    color: vars.$text-color;
+
+    @media (max-width: vars.$breakpoint-md) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .last-seen {
+    font-size: 0.85rem;
+    color: vars.$border-color;
+    margin-left: 0.5rem;
+
+    @media (max-width: vars.$breakpoint-md) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.post-options {
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: vars.$border-color;
+  padding: 0.25rem;
+}
+
+/* Post content text */
+.post-content {
+  font-size: 0.95rem;
+  color: vars.$text-color;
+  margin-top: 0.5rem;
+
+  @media (max-width: vars.$breakpoint-md) {
+    font-size: 0.85rem;
+  }
+}
+
+/* Image container */
+.post-image {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid vars.$border-color;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Actions (like, comment, share) */
+.post-actions {
+  @include mix.flex-center;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+
+  button {
+    @include mix.flex-center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: vars.$text-color;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #000000;
+    }
+
+    &.like-button.active {
+      color: #e53e3e;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+
+      @media (max-width: vars.$breakpoint-md) {
+        width: 0.85rem;
+        height: 0.85rem;
+      }
+    }
+
+    @media (max-width: vars.$breakpoint-md) {
+      font-size: 0.85rem;
+    }
+  }
+}
