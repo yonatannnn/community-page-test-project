@@ -38,13 +38,15 @@ This directory contains reusable UI components that make up the application's us
 
 Components are modular and can range from atomic components like buttons to complex ones like forms or dashboards.
 
-*Example:* A `appHeader` component may include navigation and a user profile dropdown.
+*Example:* A `appBar` component may include navigation.
 
 ### 4. Services
 
 This folder includes logic for handling API calls and other asynchronous operations.
 
 Encapsulates the details of communication with the backend, ensuring that the rest of the app can call these services without worrying about implementation details.
+
+since there is no backend I jumped it.
 
 
 ### 5. Utils
@@ -93,18 +95,12 @@ A new feature requires a comments section.
 
 ### UI Components
 
-- Develop a `Comments` component in the `components` directory.
+- Develop a `CommentsModel` component in the `components` directory.
 - Use existing utility functions or create new ones in the `utils` folder if needed.
 
-### API Integration
-
-- Add a `fetchComments` method in the `services` directory to communicate with the backend.
-- Use this method in the appropriate component or slice.
 
 ### Testing with Mock Data
-
 - If the backend is unavailable, use mock data from `utils/mockdatas` for testing.
 
 ## Conclusion
-
-This architecture is designed to foster collaboration, simplify maintenance, and support scalability. By adhering to these principles and structure, the project ensures efficient development and a seamless user experience.
+This architecture is designed to increase collaboration, simplify maintenance, and support scalability. By adhering to these principles and structure, the project ensures efficient development and a better user experience.
