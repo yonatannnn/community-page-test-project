@@ -55,7 +55,7 @@ Or using yarn:
 yarn dev
 ```
 
-The application will be accessible at [http://localhost:3000](http://localhost:3000).
+The application will be accessible at [http://localhost:portNumber].
 
 ### Build for Production
 
